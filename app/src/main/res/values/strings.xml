@@ -1,0 +1,104 @@
+<resources>
+    <string name="app_name">Roles League of Legends</string>
+
+    <string name="camille">Armada para operar fuera de los límites de la ley, Camille es la principal inteligencia
+        del Clan Ferros: una elegante agente de élite que se asegura que la máquina de Piltóver y el submundo zaunita funcione
+        sin problemas. Al ser adaptable y precisa, ella ve las técnicas torpes como una vergüenza que necesita ponerse en línea.
+        Con una mente tan brillante como las cuchillas que porta, la búsqueda de Camille por la superioridad
+        a través de las mejoras de cuerpo de hextech, han hecho que la gente se pregunte si es más máquina que mujer.</string>
+
+    <string name="nasus">Nasus es una imponente criatura Ascendida con cabeza de chacal procedente de la antigua Shurima;
+        una figura heroica a la que las gentes del desierto han encumbrado al nivel de semidiós. Poseedor de una increíble inteligencia,
+        fue un guardián del saber y estratega sin igual cuya sabiduría guio durante siglos al antiguo imperio de Shurima hasta alcanzar
+        la cumbre de su grandeza. </string>
+
+    <string name="pantheon">Antaño un reticente huésped del Aspecto de la guerra, Atreus sobrevivió cuando el poder celestial en su interior fue asesinado,
+        negándose a sucumbir ante un golpe que, de un desgarro, borró estrellas de los cielos.
+        Con el tiempo, aprendió a aceptar el poder de su propia mortalidad, así como la terca resiliencia implícita en ella.</string>
+
+    <string name="trundle">Trundle es un corpulento y retorcido trol con una actitud maliciosa. No hay nada que no pueda aplastar hasta someterlo,
+        ni siquiera el mismo hielo. Con su enorme mazo helado, congela a sus enemigos hasta los huesos y los atraviesa con puntiagudas esquirlas de hielo.</string>
+
+    <string name="shen">Shen, un enigma tanto para el reino espiritual como para el mundo mortal, no pertenece a ninguno. A pesar de haber nacido en una de
+        las familias más veneradas del norte de Navori, fue el rol de su padre como Ojo del Crepúsculo lo que verdaderamente fijó su destino
+        en la Orden Kinkou.</string>
+
+    <string name="kha6">Kha Zix es un despiadado depredador de Vacío que se infiltró en Valoran para poder devorar a sus criaturas más prometedoras.
+        Absorbe la fuerza de todas sus víctimas y evoluciona para hacerse cada vez más poderoso. Ansía devorar a Rengar, la única bestia que considera
+        a su altura.</string>
+
+    <string name="rengar">Rengar es un feroz cazador de trofeos vastaya que vive por el placer de perseguir y asesinar criaturas peligrosas.
+        Explora el mundo en busca de las bestias más aterradoras,
+        pero, ante todo, quiere encontrar alguna pista que lo lleve hasta KhaZix, la criatura del Vacío que le arrebató un ojo.</string>
+
+    <string name="sejuani">Sejuani nació del fruto de un matrimonio concertado freljordiano que terminó tan fríamente como había empezado.
+        Su madre, Kalkia de la Garra Invernal,
+        una guerrera Hija del Hielo, abandonó la familia que había formado para ir tras el hombre que le había robado el corazón años atrás.</string>
+
+    <string name="elise">Elise es una depredadora mortífera que reside en un palacio cerrado y sin luz, en las profundidades de la ciudad más vieja de Noxus.
+    Cuando era mortal era la señora de una poderosa casa, pero la mordida de un vil semidiós la transformó en algo hermoso</string>
+
+    <string name="olaf">La mayoría de los hombres diría que la muerte es temible, pero ninguno de ellos sería Olaf. El Berserker vive sólo
+        para el rugido del grito de batalla
+        y el choque del acero. Empujado por sus ansias de gloria y por el temor a ser olvidado al morir</string>
+
+    <string name="katarina">Nacida en una de las familias nobles más respetadas de Noxus, Katarina Du Couteau contó con una posición privilegiada desde pequeña.
+        Mientras que Cassiopeia, su hermana menor, se parecía a su políticamente brillante madre,
+        Katarina siguió los pasos de su padre, por lo que el astuto General Du Couteau la alentó a aprender el manejo de la espada</string>
+
+    <string name="ryze">Ryze es considerado uno de los hechiceros más adeptos de Runaterra. El archimago ancestral y gruñón lleva sobre sus hombros
+        una pesada carga. Con su constitución sin límites
+        y su inmenso poder arcano, Ryze se pasa la vida buscando incansablemente Runas Geogénicas por el mundo</string>
+
+    <string name="akali">Jonia siempre ha sido una tierra de magia salvaje, habitada por gente llena de energía
+        y con espíritu que busca convivir en armonía...
+        aunque, a veces, este equilibro no se consigue fácilmente. En ocasiones, debe salvaguardarse.</string>
+
+    <string name="syndra">Syndra es una temible maga de Jonia con un extraordinario poder bajo su comando. Cuando era pequeña, alteró a los maestros de su aldea
+        con su magia salvaje e imprudente.
+        La enviaron lejos para que aprendiera a tener un mayor control, pero con el tiempo descubrió que su supuesto mentor había restringido sus habilidades.</string>
+
+    <string name="zed">Bajo el velo de armonía de Jonia se encuentran las historias de aquellos que se quedaron atrás.
+        La historia de Zed comenzó cuando era niño, en los fríos escalones de la sede de la orden Kinkou.</string>
+
+    <string name="ezreal">Nacido y criado en un barrio adinerado de Piltóver, Ezreal siempre fue un niño curioso. Sus padres eran arqueólogos reconocidos,
+        por lo que se acostumbró a sus largas ausencias lejos del hogar familiar, fantaseando con frecuencia con unirse a ellos durante sus viajes. </string>
+
+    <string name="jinx">Aunque muchos solo ven en Jinx a una loca cargada de una amplia variedad de armas letales, los hay que aún recuerdan
+        cuando era una niña de Zaun relativamente inocente; una muchacha ingeniosa con grandes ideas
+        que nunca logró encajar del todo. Nadie sabe muy bien qué fue lo que convirtió a esa dulce niña en una infame máquina de caos y destrucción</string>
+
+    <string name="mf">Belleza y peligro: Pocos pueden rivalizar con Miss Fortune en ambos. Esta cazarrecompensas, una de las más famosas de Aguas Estancadas,
+        erigió su leyenda sobre un reguero de cadáveres llenos de plomo y tunantes capturados. El atronador eco de sus pistolas gemelas entre los hediondos
+        embarcaderos y las míseras chabolas del puerto es un indicio claro de que una nueva recompensa del tablón está pronta a ser cobrada.</string>
+
+    <string name="lucian">Lucian, que anteriormente era un Centinela de la Luz, es un sombrío cazador de espíritus vivientes.
+        Los persigue de manera implacable y los aniquila con sus pistolas reliquia gemelas.
+        Consumido por el deseo de vengar a su esposa muerta, no descansará hasta que Thresh, el espíritu que tiene presa su alma, sea destruido.
+        Despiadado y firme</string>
+
+    <string name="sivir">Desde muy temprana edad, Sivir aprendió de primera mano las duras lecciones de la vida en el desierto de Shurima.
+        Tras la caída de toda su familia a manos de los kthaons, una de las tribus de saqueadores
+        más infames del Gran Sai, la joven niña y otros huérfanos como ella solo podían sobrevivir a base de robar comida en los mercados locales</string>
+
+    <string name="morgana">Por razones del destino o por azar, Morgana y su hermana nacieron en un mundo azotado por el conflicto.
+        Las catastróficas Guerras Rúnicas habían arrasado
+        con la mayor parte de Valoran y de Shurima; parecían estar empeñadas en sepultar incluso las cimas del Targón. </string>
+
+    <string name="sona">Sona es la virtuosa demaciana más destacada del encordado etwahl. Habla solo a través de sus agraciados acordes y vibrantes arias.
+        Estos elegantes modales la volvieron muy querida por la aristocracia, pero otros sospechan que sus hechizantes melodías en verdad emanan magia,
+        un tabú en Demacia.</string>
+
+    <string name="rakan">Tan impredecible como encantador, Rakan es un vastaya infame que siempre se mete en problemas,
+        además de ser el mejor guerrero bailarín en la historia tribal de Lhotlan.
+        Para los humanos de las tierras altas de Jonia, su nombre ha sido por mucho tiempo sinónimo de festivales salvajes,
+        fiestas incontrolables y música anárquica. </string>
+
+    <string name="lux">Luxanna, o Lux, como prefiere que la llamen, creció en la ciudad demaciana de Meraplata Alta junto a su hermano mayor Garen.
+        Los dos nacieron en el seno de la prestigiosa familia Crownguard, que durante generaciones ha servido como protectora del rey de Demacia. </string>
+
+    <string name="zyra">Nacida en una antigua y mágica catástrofe, Zyra es la manifestación de la ira de la naturaleza:
+        una seductora mezcla entre planta y humana que crea vida nueva a cada paso.
+        Ve a los mortales de Valoran como poco más que presa para su progenie de semillas y no le molesta acabarlos con lluvias de mortales espinas.</string>
+
+</resources>

@@ -5,12 +5,12 @@ import android.os.Parcelable;
 import java.util.ArrayList;
 
 public class Rol implements Parcelable {
-    private int imageCharacter;
+    private int rol;
     private ArrayList<Characters> characters;
     private String rolName;
 
-    public Rol(int imageCharacter, ArrayList<Characters> characters, String rolName) {
-        this.imageCharacter = imageCharacter;
+    public Rol(int imageRol, ArrayList<Characters> characters, String rolName) {
+        this.rol = imageRol;
         this.characters = characters;
         this.rolName = rolName;
     }
@@ -23,12 +23,12 @@ public class Rol implements Parcelable {
         this.rolName = rolName;
     }
 
-    public int getImageCharacter() {
-        return imageCharacter;
+    public int getRol() {
+        return rol;
     }
 
-    public void setImageCharacter(int imageCharacter) {
-        this.imageCharacter = imageCharacter;
+    public void setRol(int rol) {
+        this.rol = rol;
     }
 
     public ArrayList<Characters> getCharacters() {
@@ -46,13 +46,13 @@ public class Rol implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(this.imageCharacter);
+        dest.writeInt(this.rol);
         dest.writeTypedList(this.characters);
         dest.writeString(this.rolName);
     }
 
     protected Rol(Parcel in) {
-        this.imageCharacter = in.readInt();
+        this.rol = in.readInt();
         this.characters = in.createTypedArrayList(Characters.CREATOR);
         this.rolName = in.readString();
     }

@@ -6,7 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 
-public class RolActivity extends AppCompatActivity  implements View.OnClickListener{
+public class ChampionActivity extends AppCompatActivity  implements View.OnClickListener{
 
     ImageView imageViewBack, imageViewExit;
     RecyclerView recyclerViewRoles;

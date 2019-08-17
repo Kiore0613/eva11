@@ -7,7 +7,6 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ImageView;
 
 import com.example.tareaeva1.objects.AdapterRecyclerViewRol;
 import com.example.tareaeva1.objects.Characters;
@@ -37,6 +36,12 @@ public class MainActivity extends AppCompatActivity implements
         recyclerViewRol = findViewById(R.id.rv_rol);
 
         listRol = new ArrayList<>();
+        rolTop = new ArrayList<>();
+        rolJg = new ArrayList<>();
+        rolMid = new ArrayList<>();
+        rolAdc = new ArrayList<>();
+        rolSupp = new ArrayList<>();
+
         recyclerViewRol.setLayoutManager(new LinearLayoutManager(this));
 
         fillRecyclerView();
@@ -49,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void fillRecyclerView(){
+
         rolTop.add(new Characters( "camille", R.drawable.camille, getResources().getString(R.string.camille)));
         rolTop.add(new Characters( "nasus", R.drawable.nasus, getResources().getString(R.string.nasus)));
         rolTop.add(new Characters( "pantheon", R.drawable.pantheon, getResources().getString(R.string.pantheon)));
@@ -91,14 +97,14 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     public void intent() {
-        Intent it = new Intent(getApplicationContext(), RolActivity.class);
+        Intent it = new Intent(getApplicationContext(), ChampionActivity.class);
         startActivity(it);
     }
 
 
     @Override
-    public void onMenuClick(Rol imageCharacter) {
-
+    public void onClick(Rol imageCharacter) {
+        intent();
     }
 
     @Override

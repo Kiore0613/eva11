@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.tareaeva1.MainActivity;
 import com.example.tareaeva1.R;
 
 import java.util.ArrayList;
@@ -24,7 +23,7 @@ public class AdapterRecyclerViewRol extends RecyclerView.Adapter<AdapterRecycler
     }
 
     public interface OnItemClick {
-        void onMenuClick(Rol imageCharacter);
+        void onClick(Rol imageCharacter);
     }
     @NonNull
     @Override
@@ -38,13 +37,14 @@ public class AdapterRecyclerViewRol extends RecyclerView.Adapter<AdapterRecycler
 
     @Override
     public void onBindViewHolder(ViewHolderRol holder, final int position) {
-        holder.imageViewRol.setImageResource(listRol.get(position).getImageCharacter());
+        holder.imageViewRol.setImageResource(listRol.get(position).getRol());
+        holder.textViewRol.setText(listRol.get(position).getRolName());
 
 
         holder.imageViewRol.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                callback.onMenuClick(listRol.get(position));
+                callback.onClick(listRol.get(position));
             }
         });
 

@@ -23,7 +23,7 @@ public class AdapterRecyclerViewRol extends RecyclerView.Adapter<AdapterRecycler
     }
 
     public interface OnItemClick {
-        void onClick(Rol imageCharacter);
+        void onClick(Rol rol);
     }
     @NonNull
     @Override

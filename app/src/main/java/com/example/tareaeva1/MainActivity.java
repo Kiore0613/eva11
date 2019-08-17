@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity implements
     ArrayList<Characters> rolAdc;
     ArrayList<Characters> rolSupp;
 
+    public static final String ROL = "rol";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements
         recyclerViewRol.setAdapter(adapter);
         recyclerViewRol.addItemDecoration(
                 new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
-
 
     }
 
@@ -79,32 +80,27 @@ public class MainActivity extends AppCompatActivity implements
         rolAdc.add(new Characters("sivir", R.drawable.sivir, getResources().getString(R.string.sivir)));
         rolAdc.add(new Characters("mf", R.drawable.mf, getResources().getString(R.string.mf)));
 
-        rolMid.add(new Characters("sona", R.drawable.sona, getResources().getString(R.string.sona)));
-        rolMid.add(new Characters("morgana", R.drawable.morgana, getResources().getString(R.string.morgana)));
-        rolMid.add(new Characters("zyra", R.drawable.zyra, getResources().getString(R.string.zyra)));
-        rolMid.add(new Characters("lux", R.drawable.lux, getResources().getString(R.string.lux)));
-        rolMid.add(new Characters("rakan", R.drawable.rakan, getResources().getString(R.string.rakan)));
+        rolSupp.add(new Characters("sona", R.drawable.sona, getResources().getString(R.string.sona)));
+        rolSupp.add(new Characters("morgana", R.drawable.morgana, getResources().getString(R.string.morgana)));
+        rolSupp.add(new Characters("zyra", R.drawable.zyra, getResources().getString(R.string.zyra)));
+        rolSupp.add(new Characters("lux", R.drawable.lux, getResources().getString(R.string.lux)));
+        rolSupp.add(new Characters("rakan", R.drawable.rakan, getResources().getString(R.string.rakan)));
 
 
 
         listRol.add(new Rol(R.drawable.topline, rolTop, "Top"));
-        listRol.add(new Rol(R.drawable.jungle, rolMid, "Jungle"));
-        listRol.add(new Rol(R.drawable.mid, rolAdc, "Mid"));
+        listRol.add(new Rol(R.drawable.jungle, rolJg, "Jungle"));
+        listRol.add(new Rol(R.drawable.mid, rolMid, "Mid"));
         listRol.add(new Rol(R.drawable.adc, rolAdc, "ADC"));
         listRol.add(new Rol(R.drawable.support, rolSupp, "Support"));
 
-
     }
-
-    public void intent() {
-        Intent it = new Intent(getApplicationContext(), ChampionActivity.class);
-        startActivity(it);
-    }
-
 
     @Override
-    public void onClick(Rol imageCharacter) {
-        intent();
+    public void onClick(Rol rol) {
+        Intent intent = new Intent(getApplicationContext(), ChampionActivity.class);
+        intent.putParcelableArrayListExtra(ROL, rol.getCharacters());
+        startActivity(intent);
     }
 
     @Override

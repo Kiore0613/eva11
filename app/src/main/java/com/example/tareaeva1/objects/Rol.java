@@ -6,10 +6,10 @@ import java.util.ArrayList;
 
 public class Rol implements Parcelable {
     private int rol;
-    private ArrayList<Characters> characters;
+    private ArrayList<Character> characters;
     private String rolName;
 
-    public Rol(int imageRol, ArrayList<Characters> characters, String rolName) {
+    public Rol(int imageRol, ArrayList<Character> characters, String rolName) {
         this.rol = imageRol;
         this.characters = characters;
         this.rolName = rolName;
@@ -31,11 +31,11 @@ public class Rol implements Parcelable {
         this.rol = rol;
     }
 
-    public ArrayList<Characters> getCharacters() {
+    public ArrayList<Character> getCharacters() {
         return characters;
     }
 
-    public void setCharacters(ArrayList<Characters> characters) {
+    public void setCharacters(ArrayList<Character> characters) {
         this.characters = characters;
     }
 
@@ -53,7 +53,7 @@ public class Rol implements Parcelable {
 
     protected Rol(Parcel in) {
         this.rol = in.readInt();
-        this.characters = in.createTypedArrayList(Characters.CREATOR);
+        this.characters = in.createTypedArrayList(Character.CREATOR);
         this.rolName = in.readString();
     }
 

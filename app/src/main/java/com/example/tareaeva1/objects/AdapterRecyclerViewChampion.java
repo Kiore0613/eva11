@@ -14,16 +14,16 @@ import java.util.ArrayList;
 
 public class AdapterRecyclerViewChampion extends RecyclerView.Adapter<AdapterRecyclerViewChampion.ViewHolderChampion> {
 
-    ArrayList<Characters> listChampion;
+    ArrayList<Character> listChampion;
     OnItemClick callback;
 
-    public AdapterRecyclerViewChampion(ArrayList<Characters> listChampion, OnItemClick callback) {
+    public AdapterRecyclerViewChampion(ArrayList<Character> listChampion, OnItemClick callback) {
         this.listChampion = listChampion;
         this.callback = callback;
     }
 
     public interface OnItemClick {
-        void onClick(Characters characters);
+        void onClick(Character characters);
     }
     @NonNull
     @Override

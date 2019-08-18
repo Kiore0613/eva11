@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.tareaeva1.objects.AdapterRecyclerViewChampion;
-import com.example.tareaeva1.objects.Characters;
+import com.example.tareaeva1.objects.Character;
 
 import java.util.ArrayList;
 
@@ -21,9 +21,10 @@ public class ChampionActivity extends AppCompatActivity  implements
 
     ImageView imageViewBack, imageViewExit;
     RecyclerView recyclerViewChampion;
-    ArrayList<Characters>listChampion;
+    ArrayList<Character>listChampion;
 
     public static final String ROL = "rol";
+    public static final String CHAMP = "character";
 
 
     @Override
@@ -35,9 +36,9 @@ public class ChampionActivity extends AppCompatActivity  implements
         imageViewExit = findViewById(R.id.img_exit);
         recyclerViewChampion = findViewById(R.id.rv_champion);
         listChampion = new ArrayList<>();
-        setTitle("Roles");
+        setTitle("Campeones");
 
-        ArrayList<Characters> characters = getIntent().getExtras().getParcelableArrayList(ROL);
+        ArrayList<Character> characters = getIntent().getExtras().getParcelableArrayList(ROL);
 
         recyclerViewChampion.setLayoutManager(new LinearLayoutManager(this));
 
@@ -57,9 +58,9 @@ public class ChampionActivity extends AppCompatActivity  implements
     }
 
     @Override
-    public void onClick(Characters listChampion) {
+    public void onClick(Character champion) {
         Intent intent = new Intent(getApplicationContext(), DescriptionActivity.class);
-
+        intent.putExtra(CHAMP, champion);
         startActivity(intent);
     }
 

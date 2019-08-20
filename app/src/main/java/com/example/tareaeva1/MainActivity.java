@@ -7,6 +7,7 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.example.tareaeva1.objects.AdapterRecyclerViewRol;
 import com.example.tareaeva1.objects.Character;
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements
     ArrayList<Character> rolAdc;
     ArrayList<Character> rolSupp;
 
+    ImageView imageViewExit, imageViewBack;
+
     public static final String ROL = "rol";
 
 
@@ -36,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_main);
 
         recyclerViewRol = findViewById(R.id.rv_rol);
+        imageViewBack = findViewById(R.id.img_back);
+        imageViewExit = findViewById(R.id.img_exit);
 
         listRol = new ArrayList<>();
         rolTop = new ArrayList<>();
@@ -46,11 +51,14 @@ public class MainActivity extends AppCompatActivity implements
 
         recyclerViewRol.setLayoutManager(new LinearLayoutManager(this));
 
+
         fillRecyclerView();
         AdapterRecyclerViewRol adapter = new AdapterRecyclerViewRol(listRol, this);
         recyclerViewRol.setAdapter(adapter);
         recyclerViewRol.addItemDecoration(
                 new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+
+        imgButton();
 
     }
 
@@ -97,15 +105,27 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onClick(Rol rol) {
+    public void onClickListener(Rol rol) {
         Intent intent = new Intent(getApplicationContext(), ChampionActivity.class);
         intent.putParcelableArrayListExtra(ROL, rol.getCharacters());
         startActivity(intent);
     }
+    public void imgButton() {
+        imageViewBack.setOnClickListener(this);
+        imageViewExit.setOnClickListener(this);
+
+    }
+
 
     @Override
     public void onClick(View v) {
-
+        switch (v.getId()){
+            case R.id.img_exit:
+                finishAffinity();
+                break;
+            case R.id.img_back:
+               finish();
+        }
     }
 }
 

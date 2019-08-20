@@ -59,5 +59,6 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
                 finishAffinity();
                 break;
         }
+
     }
 }

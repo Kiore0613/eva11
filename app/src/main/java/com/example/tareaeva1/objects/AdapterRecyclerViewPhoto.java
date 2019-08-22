@@ -6,26 +6,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 import com.example.tareaeva1.R;
 import java.util.ArrayList;
 
-public class AdapterRecyclerViewRol extends RecyclerView.Adapter<AdapterRecyclerViewRol.ViewHolderRol> {
+public class AdapterRecyclerViewPhoto extends RecyclerView.Adapter<AdapterRecyclerViewPhoto.ViewHolderRol> {
 
-    ArrayList<Rol> listRol;
+    ArrayList<Photo> listPhoto;
     OnItemClick callback;
 
-    public AdapterRecyclerViewRol(ArrayList<Rol> listRol, OnItemClick callback) {
-        this.listRol = listRol;
+    public AdapterRecyclerViewPhoto(ArrayList<Photo> listPhoto, OnItemClick callback) {
+        this.listPhoto = listPhoto;
         this.callback = callback;
     }
 
     public interface OnItemClick {
-        void onClickListener(Rol rol);
+        void onClickListener(Photo photo);
     }
     @NonNull
     @Override
-    public AdapterRecyclerViewRol.ViewHolderRol onCreateViewHolder(@NonNull ViewGroup parent, int i) {
+    public AdapterRecyclerViewPhoto.ViewHolderRol onCreateViewHolder(@NonNull ViewGroup parent, int i) {
 
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_recyclerview_main_activity, parent, false);
@@ -35,34 +34,31 @@ public class AdapterRecyclerViewRol extends RecyclerView.Adapter<AdapterRecycler
 
     @Override
     public void onBindViewHolder(ViewHolderRol holder, final int position) {
-        holder.imageViewRol.setImageResource(listRol.get(position).getRol());
-        holder.textViewRol.setText(listRol.get(position).getRolName());
+        holder.imageViewPhoto.setImageBitmap(listPhoto.get(position).getPhoto());
 
-
-        holder.imageViewRol.setOnClickListener(new View.OnClickListener() {
+        holder.imageViewPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                callback.onClickListener(listRol.get(position));
+                callback.onClickListener(listPhoto.get(position));
             }
         });
 
     }
     @Override
     public int getItemCount() {
-        return listRol.size();
+        return listPhoto.size();
 
     }
 
     public class ViewHolderRol extends RecyclerView.ViewHolder {
 
-        ImageView imageViewRol;
-        TextView textViewRol;
+        ImageView imageViewPhoto;
 
         public ViewHolderRol(View itemView) {
             super(itemView);
 
-            imageViewRol = itemView.findViewById(R.id.img_rol);
-            textViewRol = itemView.findViewById(R.id.tv_rol_name);
+            imageViewPhoto = itemView.findViewById(R.id.img_photo);
+
 
         }
     }

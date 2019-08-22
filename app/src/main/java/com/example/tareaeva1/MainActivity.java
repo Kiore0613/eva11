@@ -1,6 +1,8 @@
 package com.example.tareaeva1;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
@@ -9,110 +11,56 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.example.tareaeva1.objects.AdapterRecyclerViewRol;
-import com.example.tareaeva1.objects.Character;
-import com.example.tareaeva1.objects.Rol;
+import com.example.tareaeva1.objects.AdapterRecyclerViewPhoto;
+import com.example.tareaeva1.objects.Photo;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements
-        AdapterRecyclerViewRol.OnItemClick,
+        AdapterRecyclerViewPhoto.OnItemClick,
         View.OnClickListener
 
 {
-    RecyclerView recyclerViewRol;
-    ArrayList<Rol> listRol;
-    ArrayList<Character> rolTop;
-    ArrayList<Character> rolJg;
-    ArrayList<Character> rolMid;
-    ArrayList<Character> rolAdc;
-    ArrayList<Character> rolSupp;
+    RecyclerView recyclerViewPhoto;
+    ArrayList<Photo> listPhoto;
 
-    ImageView imageViewExit, imageViewBack;
+    ImageView imageViewExit, imageViewBack, imageViewPhoto;
 
-    public static final String ROL = "rol";
-
+     final static String IMG = "image";
+    static final int REQUEST_IMAGE_CAPTURE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerViewRol = findViewById(R.id.rv_rol);
+        recyclerViewPhoto = findViewById(R.id.rv_photo);
         imageViewBack = findViewById(R.id.img_back);
         imageViewExit = findViewById(R.id.img_exit);
+        imageViewPhoto = findViewById(R.id.img_make_photo);
 
-        listRol = new ArrayList<>();
-        rolTop = new ArrayList<>();
-        rolJg = new ArrayList<>();
-        rolMid = new ArrayList<>();
-        rolAdc = new ArrayList<>();
-        rolSupp = new ArrayList<>();
+        listPhoto = new ArrayList<>();
 
-        recyclerViewRol.setLayoutManager(new LinearLayoutManager(this));
-
-
-        fillRecyclerView();
-        AdapterRecyclerViewRol adapter = new AdapterRecyclerViewRol(listRol, this);
-        recyclerViewRol.setAdapter(adapter);
-        recyclerViewRol.addItemDecoration(
+        recyclerViewPhoto.setLayoutManager(new LinearLayoutManager(this));
+        AdapterRecyclerViewPhoto adapter = new AdapterRecyclerViewPhoto(listPhoto, this);
+        recyclerViewPhoto.setAdapter(adapter);
+        recyclerViewPhoto.addItemDecoration(
                 new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
-
+        adapter.notifyDataSetChanged();
         imgButton();
-
     }
 
-    private void fillRecyclerView(){
-
-        rolTop.add(new Character( "camille", R.drawable.camille, getResources().getString(R.string.camille)));
-        rolTop.add(new Character( "nasus", R.drawable.nasus, getResources().getString(R.string.nasus)));
-        rolTop.add(new Character( "pantheon", R.drawable.pantheon, getResources().getString(R.string.pantheon)));
-        rolTop.add(new Character( "shen", R.drawable.shen, getResources().getString(R.string.shen)));
-        rolTop.add(new Character( "trundle", R.drawable.trundle, getResources().getString(R.string.trundle)));
-
-        rolJg.add(new Character("Kha'Zix", R.drawable.kha6, getResources().getString(R.string.kha6)));
-        rolJg.add(new Character("rengar", R.drawable.rengar, getResources().getString(R.string.rengar)));
-        rolJg.add(new Character("olaf", R.drawable.olaf, getResources().getString(R.string.olaf)));
-        rolJg.add(new Character("sejuani", R.drawable.sejuani, getResources().getString(R.string.sejuani)));
-        rolJg.add(new Character("elise", R.drawable.elise, getResources().getString(R.string.elise)));
-
-        rolMid.add(new Character("akali", R.drawable.akali, getResources().getString(R.string.akali)));
-        rolMid.add(new Character("katarina", R.drawable.katarina, getResources().getString(R.string.katarina)));
-        rolMid.add(new Character("syndra", R.drawable.syndra, getResources().getString(R.string.syndra)));
-        rolMid.add(new Character("ryze", R.drawable.ryze, getResources().getString(R.string.ryze)));
-        rolMid.add(new Character("zed", R.drawable.zed, getResources().getString(R.string.zed)));
-
-        rolAdc.add(new Character("ezreal", R.drawable.ezreal, getResources().getString(R.string.ezreal)));
-        rolAdc.add(new Character("lucian", R.drawable.lucian, getResources().getString(R.string.lucian)));
-        rolAdc.add(new Character("jinx", R.drawable.jinx, getResources().getString(R.string.jinx)));
-        rolAdc.add(new Character("sivir", R.drawable.sivir, getResources().getString(R.string.sivir)));
-        rolAdc.add(new Character("mf", R.drawable.mf, getResources().getString(R.string.mf)));
-
-        rolSupp.add(new Character("sona", R.drawable.sona, getResources().getString(R.string.sona)));
-        rolSupp.add(new Character("morgana", R.drawable.morgana, getResources().getString(R.string.morgana)));
-        rolSupp.add(new Character("zyra", R.drawable.zyra, getResources().getString(R.string.zyra)));
-        rolSupp.add(new Character("lux", R.drawable.lux, getResources().getString(R.string.lux)));
-        rolSupp.add(new Character("rakan", R.drawable.rakan, getResources().getString(R.string.rakan)));
-
-
-
-        listRol.add(new Rol(R.drawable.topline, rolTop, "Top"));
-        listRol.add(new Rol(R.drawable.jungle, rolJg, "Jungle"));
-        listRol.add(new Rol(R.drawable.mid, rolMid, "Mid"));
-        listRol.add(new Rol(R.drawable.adc, rolAdc, "ADC"));
-        listRol.add(new Rol(R.drawable.support, rolSupp, "Support"));
-
-    }
 
     @Override
-    public void onClickListener(Rol rol) {
-        Intent intent = new Intent(getApplicationContext(), ChampionActivity.class);
-        intent.putParcelableArrayListExtra(ROL, rol.getCharacters());
+    public void onClickListener(Photo photo) {
+        Intent intent = new Intent(getApplicationContext(), PhotoActivity.class);
+        intent.putExtra(IMG, photo.getPhoto());
         startActivity(intent);
     }
     public void imgButton() {
         imageViewBack.setOnClickListener(this);
         imageViewExit.setOnClickListener(this);
+        imageViewPhoto.setOnClickListener(this);
 
     }
 
@@ -125,6 +73,20 @@ public class MainActivity extends AppCompatActivity implements
                 break;
             case R.id.img_back:
                finish();
+               break;
+            case R.id.img_make_photo:
+                Intent takePhoto = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (takePhoto.resolveActivity(getPackageManager()) != null) {
+                    startActivityForResult(takePhoto, REQUEST_IMAGE_CAPTURE);
+                }
+        }
+    }
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            listPhoto.add(new Photo(imageBitmap));
+
         }
     }
 }
